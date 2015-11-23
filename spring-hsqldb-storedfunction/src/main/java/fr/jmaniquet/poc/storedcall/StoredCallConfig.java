@@ -18,6 +18,10 @@ import fr.jmaniquet.poc.storedcall.countusers.service.CountUsersServiceImpl;
 public class StoredCallConfig {
 
 	@Autowired
+	@Qualifier(BeanConstants.JDBC_TEMPLATE_DAO)
+	private CountUsersDao countUsersDaoJdbcTemplate;
+	
+	@Autowired
 	@Qualifier(BeanConstants.SIMPLE_JDBC_CALL_DAO)
 	private CountUsersDao countUsersDaoSimpleJdbcCall;
 	
@@ -25,6 +29,11 @@ public class StoredCallConfig {
 	@Qualifier(BeanConstants.STORED_PROCEDURE_DAO)
 	private CountUsersDao countUsersDaoStoredProcedure;
 
+	@Bean(name = BeanConstants.JDBC_TEMPLATE_SERVICE)
+	public CountUsersService CountUsersServiceWithJdbcTemplate() {
+		return new CountUsersServiceImpl(countUsersDaoJdbcTemplate);
+	}
+	
 	@Bean(name = BeanConstants.SIMPLE_JDBC_CALL_SERVICE)
 	public CountUsersService CountUsersServiceWithSimpleJdbcCall() {
 		return new CountUsersServiceImpl(countUsersDaoSimpleJdbcCall);
