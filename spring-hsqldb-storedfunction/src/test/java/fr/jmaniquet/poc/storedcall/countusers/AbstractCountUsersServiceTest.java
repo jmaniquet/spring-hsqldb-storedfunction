@@ -14,8 +14,11 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 
+import fr.jmaniquet.poc.storedcall.StoredCallTestConfig;
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring/storedcall-test-context.xml"})
+//@ContextConfiguration(locations = {"classpath:spring/storedcall-test-context.xml"})
+@ContextConfiguration(classes = StoredCallTestConfig.class)
 @TestExecutionListeners(listeners = DbUnitTestExecutionListener.class)
 @DbUnitConfiguration(databaseConnection = "dataSource")
 @DatabaseSetup("classpath:/selectuser-dataset.xml")

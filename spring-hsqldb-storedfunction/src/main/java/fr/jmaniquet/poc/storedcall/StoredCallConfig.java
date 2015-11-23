@@ -1,4 +1,4 @@
-package fr.jmaniquet.poc.storedcall.context;
+package fr.jmaniquet.poc.storedcall;
 
 import javax.sql.DataSource;
 
@@ -11,8 +11,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.support.ResourceTransactionManager;
 
 @Configuration
-@ComponentScan("fr.jmaniquet.poc.storedcall")
-public class StoredCallContext {
+@ComponentScan
+public class StoredCallConfig {
 	
 	@Autowired
 	private DataSource dataSource;
