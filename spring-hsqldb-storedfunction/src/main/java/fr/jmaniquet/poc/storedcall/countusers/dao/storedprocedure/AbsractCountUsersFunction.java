@@ -1,4 +1,4 @@
-package fr.jmaniquet.poc.storedcall.countusers.dao;
+package fr.jmaniquet.poc.storedcall.countusers.dao.storedprocedure;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlParameter;

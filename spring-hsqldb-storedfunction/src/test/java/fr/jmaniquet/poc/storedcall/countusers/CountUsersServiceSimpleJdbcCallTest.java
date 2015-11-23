@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import fr.jmaniquet.poc.storedcall.countusers.service.CountUsersService;
+
 public class CountUsersServiceSimpleJdbcCallTest extends AbstractCountUsersServiceTest/*AbstractTransactionalJUnit4SpringContextTests*/ {
 	
 	@Autowired

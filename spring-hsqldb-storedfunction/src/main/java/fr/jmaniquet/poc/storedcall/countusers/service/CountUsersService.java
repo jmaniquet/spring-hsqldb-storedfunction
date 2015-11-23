@@ -1,4 +1,4 @@
-package fr.jmaniquet.poc.storedcall.countusers;
+package fr.jmaniquet.poc.storedcall.countusers.service;
 
 public interface CountUsersService {
 

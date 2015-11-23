@@ -15,6 +15,7 @@ import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 
 import fr.jmaniquet.poc.storedcall.StoredCallTestConfig;
+import fr.jmaniquet.poc.storedcall.countusers.service.CountUsersService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = StoredCallTestConfig.class)

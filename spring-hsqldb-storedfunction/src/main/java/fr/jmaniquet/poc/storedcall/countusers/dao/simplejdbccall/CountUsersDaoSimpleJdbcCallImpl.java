@@ -1,4 +1,4 @@
-package fr.jmaniquet.poc.storedcall.countusers;
+package fr.jmaniquet.poc.storedcall.countusers.dao.simplejdbccall;
 
 import java.sql.Types;
 
@@ -9,10 +9,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service(BeanConstants.SIMPLE_JDBC_CALL_SERVICE)
-public class CountUsersServiceSimpleJdbcCallImpl implements CountUsersService {
+import fr.jmaniquet.poc.storedcall.countusers.BeanConstants;
+import fr.jmaniquet.poc.storedcall.countusers.dao.CountUsersDao;
+
+@Repository(BeanConstants.SIMPLE_JDBC_CALL_DAO)
+public class CountUsersDaoSimpleJdbcCallImpl implements CountUsersDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

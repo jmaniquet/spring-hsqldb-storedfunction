@@ -1,15 +1,15 @@
-package fr.jmaniquet.poc.storedcall.countusers;
+package fr.jmaniquet.poc.storedcall.countusers.dao.storedprocedure;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-import fr.jmaniquet.poc.storedcall.countusers.dao.CountUsersStoredProcedure;
-import fr.jmaniquet.poc.storedcall.countusers.dao.CountUsersWithInStoredProcedure;
+import fr.jmaniquet.poc.storedcall.countusers.BeanConstants;
+import fr.jmaniquet.poc.storedcall.countusers.dao.CountUsersDao;
 
-@Service(BeanConstants.STORED_PROCEDURE_SERVICE)
-public class CountUsersServiceStoredProcedureImpl implements CountUsersService {
+@Repository(BeanConstants.STORED_PROCEDURE_DAO)
+public class CountUsersDaoStoredProcedureImpl implements CountUsersDao {
 
 	@Autowired
 	private CountUsersStoredProcedure countUsersStoredProcedure;
