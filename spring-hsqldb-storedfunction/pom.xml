@@ -22,6 +22,8 @@
 
 		<jdk.version>1.7</jdk.version>
 
+		<!--<hsqldb.version>1.8.0.10</hsqldb.version>-->
+
 		<joda-time.version>2.9.1</joda-time.version>
 		<dbunit.version>2.5.1</dbunit.version>
 		<spring-dbunit.version>1.2.1</spring-dbunit.version>

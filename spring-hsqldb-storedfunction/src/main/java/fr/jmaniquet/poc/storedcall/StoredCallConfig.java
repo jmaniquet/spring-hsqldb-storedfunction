@@ -18,12 +18,12 @@ import fr.jmaniquet.poc.storedcall.countusers.service.CountUsersServiceImpl;
 public class StoredCallConfig {
 
 	@Autowired
-	@Qualifier(BeanConstants.JDBC_DAO)
-	private CountUsersDao countUsersDaoJdbc;
+	@Qualifier(BeanConstants.JDBC_TEMPLATE_HSQLDB_COMPLIANT_DAO)
+	private CountUsersDao countUsersDaoJdbcTemplateHsqldbCompliant;
 	
 	@Autowired
-	@Qualifier(BeanConstants.JDBC_TEMPLATE_DAO)
-	private CountUsersDao countUsersDaoJdbcTemplate;
+	@Qualifier(BeanConstants.JDBC_TEMPLATE_SPRING_COMPLIANT_DAO)
+	private CountUsersDao countUsersDaoJdbcTemplateSpringCompliant;
 	
 	@Autowired
 	@Qualifier(BeanConstants.SIMPLE_JDBC_CALL_DAO)
@@ -33,14 +33,14 @@ public class StoredCallConfig {
 	@Qualifier(BeanConstants.STORED_PROCEDURE_DAO)
 	private CountUsersDao countUsersDaoStoredProcedure;
 
-	@Bean(name = BeanConstants.JDBC_SERVICE)
-	public CountUsersService CountUsersServiceWithJdbc() {
-		return new CountUsersServiceImpl(countUsersDaoJdbc);
+	@Bean(name = BeanConstants.JDBC_TEMPLATE_HSQLDB_COMPLIANT_SERVICE)
+	public CountUsersService CountUsersServiceWithJdbcTemplateHsqldbCompliant() {
+		return new CountUsersServiceImpl(countUsersDaoJdbcTemplateHsqldbCompliant);
 	}
 	
-	@Bean(name = BeanConstants.JDBC_TEMPLATE_SERVICE)
-	public CountUsersService CountUsersServiceWithJdbcTemplate() {
-		return new CountUsersServiceImpl(countUsersDaoJdbcTemplate);
+	@Bean(name = BeanConstants.JDBC_TEMPLATE_SPRING_COMPLIANT_SERVICE)
+	public CountUsersService CountUsersServiceWithJdbcTemplateSpringCompliant() {
+		return new CountUsersServiceImpl(countUsersDaoJdbcTemplateSpringCompliant);
 	}
 	
 	@Bean(name = BeanConstants.SIMPLE_JDBC_CALL_SERVICE)

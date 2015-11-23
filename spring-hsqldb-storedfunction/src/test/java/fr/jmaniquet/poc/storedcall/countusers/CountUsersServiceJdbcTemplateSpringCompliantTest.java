@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import fr.jmaniquet.poc.storedcall.countusers.service.CountUsersService;
 
-public class CountUsersServiceJdbcTest extends AbstractCountUsersServiceTest {
+public class CountUsersServiceJdbcTemplateSpringCompliantTest extends AbstractCountUsersServiceTest {
 	
 	@Autowired
-	@Qualifier(BeanConstants.JDBC_SERVICE)
+	@Qualifier(BeanConstants.JDBC_TEMPLATE_SPRING_COMPLIANT_SERVICE)
 	private CountUsersService countUsersService;
 	
 	@Before

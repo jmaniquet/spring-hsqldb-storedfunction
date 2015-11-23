@@ -13,8 +13,8 @@ import org.springframework.stereotype.Repository;
 import fr.jmaniquet.poc.storedcall.countusers.BeanConstants;
 import fr.jmaniquet.poc.storedcall.countusers.dao.CountUsersDao;
 
-@Repository(BeanConstants.JDBC_TEMPLATE_DAO)
-public class CountUsersDaoJdbcTemplate implements CountUsersDao {
+@Repository(BeanConstants.JDBC_TEMPLATE_SPRING_COMPLIANT_DAO)
+public class CountUsersDaoJdbcTemplateSpringCompliantImpl implements CountUsersDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -35,8 +35,10 @@ public class CountUsersDaoJdbcTemplate implements CountUsersDao {
 		public Integer doInCallableStatement(CallableStatement cs) throws SQLException, DataAccessException {
 			cs.registerOutParameter(1, Types.INTEGER);
 			cs.execute();
+			
 			int extracted = cs.getInt(1);
 			Integer result = (cs.wasNull() ? null : extracted);
+			
 			return result;
 		}
 	}
@@ -55,8 +57,10 @@ public class CountUsersDaoJdbcTemplate implements CountUsersDao {
 			cs.registerOutParameter(1, Types.INTEGER);
 			cs.setInt(2, paramIn);
 			cs.execute();
+			
 			int extracted = cs.getInt(1);
 			Integer result = (cs.wasNull() ? null : extracted);
+			
 			return result;
 		}
 		

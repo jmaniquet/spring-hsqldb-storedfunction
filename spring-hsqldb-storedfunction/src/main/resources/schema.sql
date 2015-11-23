@@ -18,6 +18,6 @@ CREATE FUNCTION countUsersWithIn(IN PARAM_IN INTEGER)
 		DECLARE nbUsers INTEGER;
 		DECLARE incrementedNbUsers INTEGER;
 		SET nbUsers = SELECT COUNT(*) FROM USERS U;
-		SET incrementedNbUsers = nbUsers + 1;
+		SET incrementedNbUsers = nbUsers + PARAM_IN;
 		RETURN incrementedNbUsers;
 	END/;
